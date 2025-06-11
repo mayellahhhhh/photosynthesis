@@ -79,10 +79,22 @@
     position: relative;
     z-index: 2; /* Ensure cards are above the tint */
     display: flex;
-    gap: 30px;
+    gap: 150px;
     width: 100%;
     justify-content: center;
   }
+
+.card-title {
+    font-family: 'Apple Garamond', sans-serif; 
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: rgb(230, 230, 230) 0px 0px 8px;
+    font-size: 2rem;
+    position: relative; /* Ensure proper positioning */
+    z-index: 2; /* Ensure it appears above other elements */
+}
   
   .card {
     position: relative;
@@ -90,12 +102,12 @@
     width: 260px; /* Card width */
     transition: 0.3s ease;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 10px;
     text-decoration: none;
     color: inherit;
     display: block;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); 
   }
   
@@ -118,7 +130,7 @@
     left: 0;
     top: 0;
     border-radius: 3px;
-    background-size: contain; 
+    background-size: 100% 100%; 
     background-repeat: no-repeat; 
     background-position: center;
     filter: brightness(0.9) saturate(1) contrast(1);
@@ -128,8 +140,7 @@
   }
   
   .card:hover .card-background {
-    transform: scale(1.0) translateZ(0); /* Fixed hover selector */
-    background-size: 270px;
+    transform: scale(1.25) translateZ(0); /* Fixed hover selector */
   }
   
   .card-container:hover .card:not(:hover) {
@@ -141,36 +152,11 @@
     filter: brightness(0.5) saturate(1.2) contrast(1.2) blur(20px);
   }
   
-  .card:nth-child(1) {
-    border-color: rgb(79, 16, 135); 
-  }
-  
-  .card:nth-child(2) {
-    border-color: #40573c; 
-  }
-  
-  .card:nth-child(3) {
-    border-color: #df9cc3; 
-  }
-  
-  .card:nth-child(4) {
-    border-color: #f5c506; 
-  }
-  
   .content {
     top: 50%;
     left: 0;
     padding: 25px;
     position: absolute;
-  }
-  
-  .card-category {
-    color: #fff;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 5px;
-    margin-bottom: 8px;
-    text-transform: uppercase;
   }
   
   .card-heading {
@@ -184,7 +170,7 @@
   
   .nav {
     font-family: 'Apple Garamond', sans-serif; 
-    font-weight: bold;
+    font-weight: normal;
     text-align: right;
     position: absolute;
     z-index: 2;
@@ -259,7 +245,8 @@
   }
   
   .words {
-    font-family: 'Clash Grotesk', sans-serif; 
+    font-family: 'Apple Garamond', sans-serif; 
+    font-weight: normal;
     overflow: hidden;
     position: relative;
   }
@@ -276,9 +263,20 @@
     );
     z-index: 20;
   }
+
+  .card-category p{
+    font-family: 'Apple Garamond', sans-serif; 
+    font-weight: normal;
+    color: #ffffff;
+    text-shadow: rgb(230, 230, 230) 0px 0px 8px;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-size: 30px;
+    text-align: center;
+  }
   
   .word {
-    font-family: 'Clash Grotesk', sans-serif; 
+    font-family: 'Apple Garamond', sans-serif; 
     font-weight: normal;
     display: block;
     height: 100%;
