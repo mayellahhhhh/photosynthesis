@@ -1,21 +1,21 @@
 @font-face {
-    font-family: 'Switzer';
-    src: url(media/Switzer_Complete/Fonts/OTF/Switzer-Medium.otf) format('opentype');
+    font-family: 'Apple Garamond';
+    src: url(media/apple_garamond/AppleGaramond.ttf) format('truetype');
     font-weight: normal;
     font-style: normal;
   }
   @font-face {
-    font-family: 'Clash Grotesk';
-    src: url(media/ClashGrotesk_Complete/Fonts/OTF/ClashGrotesk-Bold.otf) format('opentype');
+    font-family: 'Apple Garamond';
+    src: url(media/apple_garamond/AppleGaramond-Bold.ttf) format('truetype');
     font-weight: bold;
     font-style: normal;
   }
   
   @font-face {
     font-family: 'Clash Grotesk';
-    src: url(media/ClashGrotesk_Complete/Fonts/OTF/ClashGrotesk-Semibold.otf) format('opentype');
-    font-weight: normal;
-    font-style: normal;
+    src: url(media/apple_garamond/AppleGaramond-BoldItalic.ttf) format('truetype');
+    font-weight: bold;
+    font-style: italic;
   }
   * { 
     border: 0;
@@ -183,7 +183,8 @@
   /*hamburger navigation menu*/
   
   .nav {
-    font-family: 'Switzer', sans-serif; 
+    font-family: 'Apple Garamond', sans-serif; 
+    font-weight: bold;
     text-align: right;
     position: absolute;
     z-index: 2;
@@ -240,7 +241,7 @@
   
   /* for name animation in the landing pg*/
   .loader {
-    font-family: 'Clash Grotesk', sans-serif; 
+    font-family: 'Apple Garamond', sans-serif; 
     color: rgb(255, 255, 255);
     font-weight: bold;
     font-size: 30px;
