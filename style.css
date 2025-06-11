@@ -1,0 +1,462 @@
+@font-face {
+    font-family: 'Switzer';
+    src: url(media/Switzer_Complete/Fonts/OTF/Switzer-Medium.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Clash Grotesk';
+    src: url(media/ClashGrotesk_Complete/Fonts/OTF/ClashGrotesk-Bold.otf) format('opentype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Clash Grotesk';
+    src: url(media/ClashGrotesk_Complete/Fonts/OTF/ClashGrotesk-Semibold.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  * { 
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    height: 100%;
+    font-size: 14px;
+  }
+  body {
+    height: 100%;
+  }
+  
+  /*backgroundssss*/
+  
+  .landing-page-bg video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire background */
+    z-index: -100; /* Ensure video is behind other content */
+  }
+  
+  .rooms-background {
+    position: relative; /* Ensure the pseudo-element is positioned correctly */
+    background-image: url('media/rooms_pics/doorsbg.png'); /* Change this if needed */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+  }
+  
+  .rooms-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Add a dark tint */
+    z-index: 1; /* Place the tint above the background */
+    pointer-events: none; /* Ensure the overlay doesn't block interactions */
+  }
+  
+  .blur-background {
+    .landing-page-bg video, .rooms-background{
+      filter: blur(7px); /* Adjust the blur intensity as needed */
+      transition: filter 0.3s ease; /* Smooth transition for the blur effect */
+    }
+  }
+  
+  /*cards for rooms*/
+  .card-container {
+    position: relative;
+    z-index: 2; /* Ensure cards are above the tint */
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .card {
+    position: relative;
+    list-style: none;
+    width: 260px; /* Card width */
+    transition: 0.3s ease;
+    overflow: hidden;
+    border-radius: 5px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); 
+  }
+  
+  .card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+  }
+  
+  .card:before {
+    content: "";
+    display: block;
+    padding-bottom: 150%; /* Maintains aspect ratio (3:2) */
+    width: 100%;
+  }
+  
+  .card-background {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    border-radius: 3px;
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    filter: brightness(0.9) saturate(1) contrast(1);
+    transform-origin: bottom;
+    transform: scale(1.02) translate(0);
+    transition: 0.3s ease;
+  }
+  
+  .card:hover .card-background {
+    transform: scale(1.0) translateZ(0); /* Fixed hover selector */
+    background-size: 270px;
+  }
+  
+  .card-container:hover .card:not(:hover) {
+    transform: scale(0.9);
+  }
+  
+  .card-container:hover > .card:not(:hover) .card-background,
+  .card-container:hover > .card:not(:hover) .card-category {
+    filter: brightness(0.5) saturate(1.2) contrast(1.2) blur(20px);
+  }
+  
+  .card:nth-child(1) {
+    border-color: rgb(79, 16, 135); 
+  }
+  
+  .card:nth-child(2) {
+    border-color: #40573c; 
+  }
+  
+  .card:nth-child(3) {
+    border-color: #df9cc3; 
+  }
+  
+  .card:nth-child(4) {
+    border-color: #f5c506; 
+  }
+  
+  .content {
+    top: 50%;
+    left: 0;
+    padding: 25px;
+    position: absolute;
+  }
+  
+  .card-category {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  
+  .card-heading {
+    color: #fff;
+    font-size: 25px;
+    line-height: 1;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /*hamburger navigation menu*/
+  
+  .nav {
+    font-family: 'Switzer', sans-serif; 
+    text-align: right;
+    position: absolute;
+    z-index: 2;
+    top: 47%;
+    left: 0;
+    right: 10px;
+    text-decoration: none;
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: center; 
+    color: white;
+    text-shadow: rgb(230, 230, 230) 0px 0px 8px;
+  
+  }
+  
+  .nav #links {
+    color: white;
+    visibility: hidden; /* Start hidden */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    width: 200px;
+    z-index: 1000;
+    opacity: 0; /* Start invisible */
+    transform: translateY(-20px); /* Start slightly above */
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease; /* Smooth fade-in and slide-down */
+  }
+  
+  .nav #links.show {
+    visibility: visible; /* Make visible */
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Slide into place */
+  }
+  
+  .nav #links a {
+    display: block;
+    text-align: right;
+    margin-bottom: 10px;
+    color: rgb(255, 255, 255);
+    transition: color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .nav #links a:hover {
+    color: rgb(184, 184, 184); 
+  }
+  
+  .nav a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+  }
+  
+  /* for name animation in the landing pg*/
+  .loader {
+    font-family: 'Clash Grotesk', sans-serif; 
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 30px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 40px;
+    padding: 10px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 8px;
+    z-index: 1000; /* Ensure it stays above blurred content */
+    position: fixed;
+    top: 45%;
+  }
+  
+  .words {
+    font-family: 'Clash Grotesk', sans-serif; 
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .words::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      var(--bg-color) 10%,
+      transparent 30%,
+      transparent 70%,
+      var(--bg-color) 90%
+    );
+    z-index: 20;
+  }
+  
+  .word {
+    font-family: 'Clash Grotesk', sans-serif; 
+    font-weight: normal;
+    display: block;
+    height: 100%;
+    padding-left: 6px;
+    color: #ffffff;
+    animation: spin_4991 5s infinite;
+    text-shadow: rgb(230, 230, 230) 0px 0px 8px;
+  }
+  
+  @keyframes spin_4991 {
+    10% {
+      -webkit-transform: translateY(-102%);
+      transform: translateY(-102%);
+    }
+  
+    25% {
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+    }
+  
+    35% {
+      -webkit-transform: translateY(-202%);
+      transform: translateY(-202%);
+    }
+  
+    50% {
+      -webkit-transform: translateY(-200%);
+      transform: translateY(-200%);
+    }
+  
+    60% {
+      -webkit-transform: translateY(-302%);
+      transform: translateY(-302%);
+    }
+  
+    75% {
+      -webkit-transform: translateY(-300%);
+      transform: translateY(-300%);
+    }
+  
+    85% {
+      -webkit-transform: translateY(-402%);
+      transform: translateY(-402%);
+    }
+  
+    100% {
+      -webkit-transform: translateY(-400%);
+      transform: translateY(-400%);
+    }
+  }
+  @keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(0.5rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+  }
+  @keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+  }
+  
+  /* Enable Audio Button */
+  .enable-audio-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 14px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .card {
+      width: 240px; /* Slightly smaller for tablets */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card-container {
+      justify-content: flex-start; /* Align to the left on small screens */
+      overflow-x: auto; /* Allow horizontal scroll if needed */
+      flex-wrap: nowrap; /* Don't wrap */
+      scroll-snap-type: x mandatory; /* Enable smooth snap scrolling */
+    }
+  
+    .card {
+      flex: 0 0 auto;
+      width: 200px; /* Smaller for phones */
+      scroll-snap-align: start; /* Snap the card to screen when scrolling */
+    }
+  }
+  
+  /* Newsletter Section */
+  .newsletter-section {
+    background-color: #f5f5f5;
+    padding: 50px 20px;
+    text-align: center;
+    z-index: 100;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+    animation: floatImage 4s ease-in-out infinite, zoomIn 1s ease forwards;
+  
+  }
+  
+  .newsletter-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .newsletter-heading {
+    font-family: 'Clash Grotesk', sans-serif; 
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .newsletter-description {
+    font-family: 'Switzer', sans-serif; 
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #666;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .newsletter-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Switzer', sans-serif; 
+  }
+  
+  .newsletter-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Clash Grotesk', sans-serif; 
+  }
+  
+  .newsletter-button:hover {
+    background-color: #555;
+  }
+  
+  .newsletter-section:hover {
+    transform: scale(1.05);
+  
+  }
