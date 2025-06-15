@@ -1,3 +1,4 @@
+/*fonts*/
 @font-face {
     font-family: 'Apple Garamond';
     src: url(media/apple_garamond/AppleGaramond.ttf) format('truetype');
@@ -17,6 +18,8 @@
     font-weight: bold;
     font-style: italic;
   }
+
+/*set default*/
   * { 
     border: 0;
     margin: 0;
@@ -32,7 +35,6 @@
   }
   
   /*backgroundssss*/
-  
   .landing-page-bg video{
     position: absolute;
     top: 0;
@@ -74,7 +76,7 @@
     }
   }
   
-  /*cards for rooms*/
+  /*cards for learn*/
   .card-container {
     position: relative;
     z-index: 2; /* Ensure cards are above the tint */
@@ -167,7 +169,6 @@
   }
   
   /*hamburger navigation menu*/
-  
   .nav {
     font-family: 'Apple Garamond', sans-serif; 
     font-weight: normal;
@@ -221,7 +222,7 @@
   
   .nav a {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 30px;
     color: #ffffff;
   }
   
@@ -230,11 +231,11 @@
     font-family: 'Apple Garamond', sans-serif; 
     color: rgb(255, 255, 255);
     font-weight: bold;
-    font-size: 30px;
+    font-size: 40px;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
-    height: 40px;
-    padding: 10px 10px;
+    height: 45px;
+    padding: 15px 15px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -261,7 +262,7 @@
       transparent 70%,
       var(--bg-color) 90%
     );
-    z-index: 20;
+    z-index: 30px;
   }
 
   .card-category p{
@@ -280,53 +281,57 @@
     font-weight: normal;
     display: block;
     height: 100%;
-    padding-left: 6px;
+    padding-left: 10px;
     color: #ffffff;
     animation: spin_4991 5s infinite;
     text-shadow: rgb(230, 230, 230) 0px 0px 8px;
   }
   
-  @keyframes spin_4991 {
+@keyframes spin_4991 {
     10% {
-      -webkit-transform: translateY(-102%);
-      transform: translateY(-102%);
+        -webkit-transform: translateY(-118%);
+        transform: translateY(-118%);
     }
-  
+
     25% {
-      -webkit-transform: translateY(-100%);
-      transform: translateY(-100%);
+        -webkit-transform: translateY(-116%);
+        transform: translateY(-116%);
     }
-  
+
     35% {
-      -webkit-transform: translateY(-202%);
-      transform: translateY(-202%);
+        -webkit-transform: translateY(-218%);
+        transform: translateY(-218%);
     }
-  
+
     50% {
-      -webkit-transform: translateY(-200%);
-      transform: translateY(-200%);
+        -webkit-transform: translateY(-216%);
+        transform: translateY(-216%);
     }
-  
+
     60% {
-      -webkit-transform: translateY(-302%);
-      transform: translateY(-302%);
+        -webkit-transform: translateY(-318%);
+        transform: translateY(-318%);
     }
-  
+
     75% {
-      -webkit-transform: translateY(-300%);
-      transform: translateY(-300%);
+        -webkit-transform: translateY(-316%);
+        transform: translateY(-316%);
     }
-  
+
     85% {
-      -webkit-transform: translateY(-402%);
-      transform: translateY(-402%);
+        -webkit-transform: translateY(-418%);
+        transform: translateY(-418%);
     }
-  
+
     100% {
-      -webkit-transform: translateY(-400%);
-      transform: translateY(-400%);
+        -webkit-transform: translateY(-416%);
+        transform: translateY(-416%);
     }
-  }
+}
+
+.word {
+    animation: spin_4991 10s infinite; /* Increased duration to slow down */
+}
   @keyframes floatImage {
     0% {
         transform: translateY(0);
@@ -458,4 +463,19 @@
   .newsletter-section:hover {
     transform: scale(1.05);
   
+  }
+
+  .ref-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40%; /* Takes up the entire left side */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Apple Garamond', sans-serif; 
+    font-weight: normal;
+    z-index: 1000;
+    height: 100%; /* Adjust height as needed */
   }
