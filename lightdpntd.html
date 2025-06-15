@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="main1.js" defer></script>
+</head>
+<body>
+    <div class="carousel">
+  <div class="list">
+
+    <div class="item" style="background-image: url(https://images.unsplash.com/photo-1614366521568-5ed2403107b1?q=80&w=2137&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+      <div class="content">
+        <div class="title">Light dependent reaction</div>
+        <div class="name">Introduction : </div>
+        <div class="des">Witness the serene beauty of the sunrise over
+          majestic
+          mountain peaks. A moment of pure tranquility.</div>
+      </div>
+    </div>
+
+    <div class="item" style="background-image: url(https://images.unsplash.com/photo-1649490600980-3e270ecce314?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+      <div class="content">
+        <div class="title">Light Absorption</div>
+        <div class="name">Photosystems</div>
+        <div class="des">Explore the rugged beauty of barren rocky mountains.
+          A
+          testament to nature's raw power.</div>
+      </div>
+    </div>
+
+    <div class="item" style="background-image: url(https://images.unsplash.com/photo-1623428455269-e33c8c3b7c25?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+      <div class="content">
+        <div class="title">Water Splitting</div>
+        <div class="name">Photolysis</div>
+        <div class="des">A peaceful trail through dense green forests. Perfect
+          for
+          reconnecting with nature.</div>
+      </div>
+    </div>
+
+    <div class="item" style="background-image: url(https://images.unsplash.com/photo-1501809315818-328813ffb19c?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+      <div class="content">
+        <div class="title">electron transport chain (ETC)</div>
+        <div class="name">oxidative phosphorylation</div>
+        <div class="des">A colorful meadow filled with butterflies and
+          blooming
+          flowers. Nature at its best.</div>
+      </div>
+    </div>
+
+    <div class="item" style="background-image: url(https://images.unsplash.com/photo-1629006238139-a487bd41aa03?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+      <div class="content">
+        <div class="title">ATP Synthesis</div>
+        <div class="name">Chemiosmosis</div>
+        <div class="des">A calm and serene lake surrounded by towering trees
+          and
+          mountains. A perfect escape.</div>
+      </div>
+    </div>
+
+    <div class="item" style="background-image: url(https://images.unsplash.com/photo-1614200991676-910c80a78ed4?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+      <div class="content">
+        <div class="title">NADPH Formation</div>
+        <div class="name">PSI & Ferredoxin</div>
+        <div class="des">Mountain peaks wrapped in clouds. A dreamy sight that
+          inspires awe and wonder.</div>
+      </div>
+    </div>
+</div>
+  <!--next prev button-->
+  <div class="arrows">
+    <button class="prev">
+      <i class="bi bi-arrow-left"></i>
+    </button>
+    <button class="next">
+      <i class="bi bi-arrow-right"></i>
+    </button>
+
+    <div class="slide-number"></div>
+  </div>
+
+  <!-- time running -->
+  <div class="timeRunning"></div>
+
+</div>
+<script>
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowLeft') {
+    document.querySelector('.prev').click();
+  } else if (e.key === 'ArrowRight') {
+    document.querySelector('.next').click();
+  }
+});
+</script>
+</body>
+</html>
+
