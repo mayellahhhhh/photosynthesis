@@ -1,24 +1,45 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url(media/apple_garamond/AppleGaramond.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url(media/apple_garamond/AppleGaramond-Bold.ttf) format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clash Grotesk';
+  src: url(media/apple_garamond/AppleGaramond-BoldItalic.ttf) format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Apple Garamond", sans-serif;
 }
 
 :root {
   --left-position: 55%;
   --transition-time: 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  --primary-color: #00512c;
+  --secondary-color: #ededd3;
+  --third-color: #b8ff8a ;
 }
 
 html,
 body {
   height: 100%;
   width: 100%;
-  background-color: #111111;
 }
 
 /* carousel */
@@ -52,7 +73,7 @@ body {
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(33, 33, 33, 0.5);
+  background-color: #00512d7d; 
   z-index: 1;
 }
 
@@ -93,7 +114,7 @@ body {
 .list .item .content {
   position: absolute;
   text-align: left;
-  color: #fff;
+  color: var(--secondary-color);
   z-index: 3;
   left: 0;
   top: 100%;
@@ -108,15 +129,13 @@ body {
   display: block;
   height: 1px;
   width: 20px;
-  background-color: #fff;
+  background-color: var(--secondary-color);
   margin-bottom: 10px;
 }
 
 .content .title {
-  font-size: 12px;
-  text-transform: uppercase;
-  color: #ffffff;
-  font-weight: bold;
+  font-size: 25px;
+  color: var(--secondary-color);
   line-height: 1;
   margin-bottom: 10px;
   transition: all var(--transition-time);
@@ -126,8 +145,8 @@ body {
 .content .title::after {
   content: attr(data-item);
   border-radius: 50%;
-  color: #fff;
-  font-size: 12px;
+  color: var(--secondary-color);
+  font-size: 25px;
   position: absolute;
   top: -20px;
   left: 0px;
@@ -136,17 +155,16 @@ body {
 }
 
 .content .name {
-  font-size: 10px;
-  text-transform: uppercase;
+  font-size: 20px;
   font-weight: 500;
   line-height: 1;
   transition: all var(--transition-time);
   margin-bottom: 10px;
-  color: greenyellow;
+  color: var(--third-color);
 }
 
 .content .des {
-  font-size: 16px;
+  font-size: 40px;
   font-weight: 400;
   transition: all var(--transition-time);
   opacity: 0;
@@ -156,7 +174,7 @@ body {
 .list .item:nth-child(1) .content,
 .list .item:nth-child(2) .content {
   transform: translateY(-50%);
-  left: 100px;
+  left: 120px;
   width: 600px;
   top: 50%;
   padding: 0;
@@ -171,26 +189,26 @@ body {
 
 .list .item:nth-child(1) .content .title::after,
 .list .item:nth-child(2) .content .title::after {
-  font-size: 20px;
+  font-size: 30px;
   top: -40px;
   left: 15px;
 }
 
 .list .item:nth-child(1) .content .title,
 .list .item:nth-child(2) .content .title {
-  font-size: 30px;
+  font-size: 40px;
   margin-bottom: 20px;
 }
 
 .list .item:nth-child(1) .content .name,
 .list .item:nth-child(2) .content .name {
-  font-size: 20px;
+  font-size: 30px;
   margin-bottom: 20px;
 }
 
 .list .item:nth-child(1) .content .des,
 .list .item:nth-child(2) .content .des {
-  font-size: 16px;
+  font-size: 26px;
   opacity: 1;
   display: block;
   width: 400px;
@@ -212,6 +230,83 @@ body {
 
 /* Carousel */
 
+.button {
+  display: block;
+  position: relative;
+  width: 56px;
+  height: 56px;
+  margin: 0;
+  overflow: hidden;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+
+  z-index: 1000;
+}
+
+.button:before,
+.button:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 7px;
+}
+
+.button:before {
+  border: 2px solid var(--secondary-color);
+  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.button:after {
+  border: 2px solid var(--secondary-color);
+  transform: scale(1.3);
+  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
+}
+
+.button:hover:before,
+.button:focus:before {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.button:hover:after,
+.button:focus:after {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.button-box {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.button-elem {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 17px 18px 0 18px;
+  transform: rotate(180deg);
+  fill: var(--secondary-color);
+}
+
+.button:hover .button-box,
+.button:focus .button-box {
+  transition: 0.4s;
+  transform: translateX(-56px);
+}
+
+
+
 /* next prev arrows */
 
 .arrows {
@@ -231,8 +326,8 @@ body {
   min-width: 40px;
   min-height: 40px;
   border-radius: 50%;
-  border: 2px solid rgb(255, 255, 255);
-  color: rgb(255, 255, 255);
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
   background-color: transparent;
   outline: none;
   font-size: 25px;
@@ -245,14 +340,14 @@ body {
 }
 
 .arrows button:hover {
-  border: 2px solid #ffffff;
-  color: #ffffff;
+  border: 2px solid var(--third-color);
+  color: var(--third-color);
   background-color: transparent;
 }
 
 .slide-number {
   font-size: 25px;
-  color: #ffffff;
+  color: var(--secondary-color);
   font-weight: 400;
   margin-left: auto;
   letter-spacing: 5px;
@@ -271,29 +366,8 @@ body {
 .progress-bar {
   height: 100%;
   width: 100%;
-  background-color: #d36e10;
+  background-color: var(--primary-color);
   transition: all var(--transition-time);
-}
-
-/* time running */
-.carousel .timeRunning {
-  position: fixed;
-  z-index: 1000;
-  width: 0%;
-  height: 4px;
-  background-color: #ffffff;
-  left: 0;
-  top: 0;
-  animation: runningTime 7s linear 1 forwards;
-}
-
-@keyframes runningTime {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
 }
 
 .youtube-button {
