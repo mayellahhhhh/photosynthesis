@@ -55,7 +55,7 @@ const runningTimeBar = document.querySelector(".carousel .timeRunning");
 
 // Timing configurations
 const TIME_RUNNING = 1500; // Animation duration for the transition
-//const TIME_AUTO_NEXT = 3500; // Auto-slide duration
+
 
 // Initialize timeout variables
 let transitionTimeout;
@@ -170,3 +170,19 @@ function resetCarouselState() {
   // Reset the running time bar animation
   resetAnimation();
 }
+
+// TEST FOR PREVIEW
+const refItems = document.querySelectorAll('.ref-list li');
+    const previewBox = document.getElementById('refPreviewBox');
+
+    refItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        const previewText = item.getAttribute('data-preview');
+        previewBox.innerText = previewText;
+        previewBox.style.display = 'block';
+      });
+
+      item.addEventListener('mouseleave', () => {
+        previewBox.style.display = 'none';
+      });
+    });

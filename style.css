@@ -132,19 +132,22 @@
   
   .card-background {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
     top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     height: auto;
     border-radius: 3px;
-    background-size: 100% 100%; 
     background-repeat: no-repeat; 
     background-position: center;
     filter: brightness(0.9) saturate(1) contrast(1);
     transform-origin: center;
     transform: scale(1.02) translate(0);
     transition: 0.3s ease;
+    background-size: cover;
+    overflow: hidden;
+
+
   }
   
   .card:hover .card-background {
@@ -392,4 +395,35 @@
     font-weight: normal;
     z-index: 1000;
     height: 100%; /* Adjust height as needed */
+  }
+
+  .ref-list{
+    font-family: Apple Garamond, sans-serif;
+    font-weight: normal;
+    color: var(--secondary-color);
+    z-index: 1000;
+    font-size: 25px;
+    list-style: decimal;
+    padding-left: 20px;
+  }
+
+  .ref-list li {
+    margin: 15px 0;
+    cursor: pointer;
+  }
+
+  #refPreviewBox {
+    position: fixed;
+    right: 30px;
+    top: 150px;
+    width: 280px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+    display: none;
+    z-index: 1000;
+    color: #333;
+    transition: opacity 0.2s ease;
   }
