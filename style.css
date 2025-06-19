@@ -383,19 +383,20 @@
   }
   
   .ref-box {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40%; /* Takes up the entire left side */
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #28301c;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-family: 'Apple Garamond', sans-serif; 
-    font-weight: normal;
-    z-index: 1000;
-    height: 100%; /* Adjust height as needed */
-  }
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40%; /* Takes up the entire left side */
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #28301c;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-family: 'Apple Garamond', sans-serif; 
+      font-weight: normal;
+      z-index: 1000;
+      height: 100%; /* Adjust height as needed */
+      text-align: center; /* Center text horizontally */
+    }
 
   .ref-list{
     font-family: Apple Garamond, sans-serif;
@@ -407,23 +408,43 @@
     padding-left: 20px;
   }
 
-  .ref-list li {
-    margin: 15px 0;
-    cursor: pointer;
-  }
+.text-center {
+  text-align: center;
+  color: var(--secondary-color);
+  font-family: 'Apple Garamond', sans-serif;
+  font-size: 70px;
+  font-weight: normal;
+}
 
-  #refPreviewBox {
-    position: fixed;
-    right: 30px;
-    top: 150px;
-    width: 280px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
-    display: none;
-    z-index: 1000;
-    color: #333;
-    transition: opacity 0.2s ease;
-  }
+a {
+  color: var(--third-color);
+  text-decoration: none;
+}
+
+.preview-link {
+  text-align: center;
+  left:  1000px;
+}
+
+.preview-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.preview-box {
+  display: none;
+  position: fixed;
+  max-width: 250px;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 14px;
+  color: #333;
+  z-index: 100;
+}
+
+.preview-container:hover .preview-box {
+  display: flex;
+}
