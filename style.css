@@ -412,6 +412,7 @@
     cursor: pointer;
   }
 
+/* Reference Preview Box TEST ONLY */
   #refPreviewBox {
     position: fixed;
     right: 30px;
