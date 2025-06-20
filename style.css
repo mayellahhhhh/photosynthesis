@@ -366,6 +366,7 @@ body {
   .card {
     width: 240px; /* Slightly smaller for tablets */
   }
+  
 }
 
 @media (max-width: 768px) {
@@ -431,21 +432,30 @@ a {
 .preview-container {
   position: relative;
   display: inline-block;
-  cursor: pointer;
 }
 
 .preview-box {
-  position: fixed;
-  right: 30px;
-  top: 150px;
-  width: 280px;
-  padding: 15px;
+  position: absolute;
+  left: 200%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+  width: 400px;
+  min-height: 60px;
+  padding: 16px 20px;
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid #ccc;
   border-radius: 10px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.12);
   display: none;
   z-index: 1000;
   color: #333;
+  font-size: 20px;
+  text-align: center;
   transition: opacity 0.2s ease;
+}
+
+.preview-container:hover .preview-box, 
+.preview-container:focus-within .preview-box {
+  display: block;
+  opacity: 1;
 }
